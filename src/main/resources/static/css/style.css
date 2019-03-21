@@ -56,7 +56,7 @@ section h1, footer h1, nav a
 
 header
 {
-    background: url('separateur.png') repeat-x bottom;
+    background: url('/img/separateur.png') repeat-x bottom;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -140,7 +140,7 @@ nav a:hover
     margin-top: 15px;
     height: 200px;
     border-radius: 5px;
-    background: url('banniereAccueil.jpg') no-repeat;
+    background: url('/img/banniereAccueil.jpg') no-repeat;
     position: relative;
     box-shadow: 0px 4px 4px #1c1a19;
     margin-bottom: 25px;
@@ -167,7 +167,7 @@ nav a:hover
     position: absolute;
     right: 5px;
     bottom: 5px;
-    background: url('fond_degraderouge.png') repeat-x;
+    background: url('/img/fond_degraderouge.png') repeat-x;
     border: 1px solid #760001;
     border-radius: 5px;
     font-size: 1.2em;
@@ -251,7 +251,7 @@ aside img
 footer
 {
     display: flex;
-    background:  url('ico_top.png') no-repeat top center, url('separateur.png') repeat-x top, url('ombre.png') repeat-x top;
+    background:  url('/img/ico_top.png') no-repeat top center, url('/img/separateur.png') repeat-x top, url('/img/ombre.png') repeat-x top;
     padding-top: 25px;
     background-color: black;
 	color: darkorange;
@@ -298,7 +298,7 @@ footer h1
 
 #mes_amis ul
 {
-    list-style-image: url('ico_liensexterne.png');
+    list-style-image: url('/img/ico_liensexterne.png');
     padding-left: 2px;
 }
 

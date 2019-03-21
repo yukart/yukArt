@@ -2,7 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="style.css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+    	
+    	<!-- include css in the header -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+
         <title>Compte</title>
     </head>
     
@@ -11,7 +16,7 @@
             <header id="bloc_header">
                 <div id="titre_principal">
                     <div id="logo">
-                        <img src="logo.png" alt="Logo de YoukArt" />
+                        <img th:src="@{/img/logo.png}" alt="Logo de YoukArt" />
                         <h1>Compte</h1>    
                     </div>
                 </div>
@@ -22,11 +27,11 @@
 						<input id="search-btn" type="submit" value="Rechercher" />
 					</form>
                     <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="film.html">Film</a></li>
-                        <li><a href="musique.html">Série</a></li>
-                        <li><a href="serie.html">Musique</a></li>
-                        <li><a href="compte.html">Compte</a></li>
+                        <li><a th:href="@{index}">Accueil</a></li>
+                        <li><a th:href="@{film}">Film</a></li>
+                        <li><a th:href="@{musique}">Série</a></li>
+                        <li><a th:href="@{serie}">Musique</a></li>
+                        <li><a th:href="@{compte}">Compte</a></li>
                     </ul>
                 </nav>
             </header>
@@ -34,13 +39,13 @@
             <div id="banniere_image">
                 <div id="banniere_description">
                     La Grande Vague de Kanagawa, Hokusai 1830 ...
-                    <a href="#" class="bouton_rouge">Voir l'article <img src="flecheblanchedroite.png" alt="" /></a>
+                    <a href="#" class="bouton_rouge">Voir l'article <img th:src="@{/img/flecheblanchedroite.png}" alt="" /></a>
                 </div>
             </div>
             
             <section>
                 <article>
-                    <h1><img src="ico_compte.png" alt="Catégorie voyage" class="ico_categorie" />Mon compte</h1>
+                    <h1><img th:src="@{/img/ico_compte.png}" alt="Catégorie voyage" class="ico_categorie" />Mon compte</h1>
                 </article>
                 <aside>
                 </aside>
@@ -54,7 +59,7 @@
                 </div>
                 <div id="mes_photos">
                     <h1>Nouveautés</h1>
-                    <p><img src="photo1.jpg" alt="Photographie" /><img src="photo2.jpg" alt="Photographie" /><img src="photo3.jpg" alt="Photographie" /><img src="photo4.jpg" alt="Photographie" /></p>
+                    <p><img th:src="@{/img/photo1.jpg}" alt="Photographie" /><img th:src="@{/img/photo2.jpg}"  alt="Photographie" /><img th:src="@{/img/photo3.jpg}"  alt="Photographie" /><img th:src="@{/img/photo4.jpg}" alt="Photographie" /></p>
                 </div>
                 <div id="mes_amis">
                     <h1>La team</h1>
