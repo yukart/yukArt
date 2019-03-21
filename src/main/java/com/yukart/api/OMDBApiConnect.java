@@ -80,11 +80,15 @@ public class OMDBApiConnect {
 		return json;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		OMDBApiConnect omdb = new OMDBApiConnect();
-		System.out.println(omdb.searchMovieByTitle("The Wolf"));
+		String theWolf = omdb.searchMovieByTitle("The Wolf");
+		System.out.println(theWolf);
 		System.out.println(omdb.searchMovieByTitleAndYear("batman", 2008));
 		System.out.println(omdb.searchMovieByImdb("tt0398417"));
+
+		JSONObject response = omdb.parseToJson(theWolf);
+		System.out.println(response.get("Title"));
 	}
 
 }
