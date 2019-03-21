@@ -55,7 +55,6 @@ public class SpotifyApiConnect {
 
 		String requestUrl = SEARCH_URL.replaceAll("XX", "artists")
 		.replaceAll("ID", ID);
-
 		return sendGetRequest(requestUrl+"/top-tracks");
 
 	}

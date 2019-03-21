@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+    	
+    	<!-- include css in the header -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+        
+        <title>Accueil</title>
+    </head>
+    
+    <body>
+        <div id="bloc_page">
+            <header id="bloc_header">
+                <div id="titre_principal">
+                    <div id="logo">
+                        <img th:src="@{/img/logo.png}" alt="Logo de YoukArt" />
+                        <h1>Accueil</h1>    
+                    </div>
+                </div>
+                
+                <nav>
+                	<form action="/search" id="searchthis" method="get">
+						<input id="search" name="q" type="text" placeholder="Rechercher" />
+						<input id="search-btn" type="submit" value="Rechercher" />
+					</form>
+                    <ul>
+                        <li><a th:href="@{index}">Accueil</a></li>
+                        <li><a th:href="@{film}">Film</a></li>
+                        <li><a th:href="@{serie}">Série</a></li>
+                        <li><a th:href="@{musique}">Musique</a></li>
+                        <li><a th:href="@{compte}">Compte</a></li>
+                    </ul>
+                </nav>
+            </header>
+            
+            <div id="banniere_image">
+                <div id="banniere_description">
+                    La Grande Vague de Kanagawa, Hokusai 1830 ...
+                    <a href="#" class="bouton_rouge">Voir l'article <img th:src="@{/img/flecheblanchedroite.png}" alt="" /></a>
+                </div>
+            </div>
+            
+            <section>
+                <article>
+                    <h1><img th:src="@{/img/ico_accueil.png}" alt="Catégorie voyage" class="ico_categorie" />La Grande Vague de Kanagawa</h1>
+                    <p>La Grande Vague de Kanagawa (神奈川沖浪裏, Kanagawa-oki nami-ura, littéralement "Sous la vague au large de Kanagawa"),</p>
+                    <p>plus connue sous le nom de La Vague, est une célèbre estampe japonaise du peintre japonais spécialiste de l'ukiyo-e,</p>
+                    <p>Hokusai, publiée en 1830 ou en 1831 pendant l'époque d'Edo.</p>
+					<p>Cette estampe est l'œuvre la plus connue de Hokusai et la première de sa fameuse série Trente-six vues du mont FujiNote 2,</p>
+					<p>dans laquelle l'utilisation du bleu de Prusse renouvelait le langage de l'estampe japonaise. La composition de La Vague, </p>
+					<p>synthèse de l'estampe japonaise traditionnelle et de la « perspective » occidentale, lui valut un succès immédiat au Japon,</p>
+					<p> puis en Europe, où elle fut une des sources d'inspiration des impressionnistes.</p>
+                </article>
+                <aside>
+                    <h1>À propos du groupe</h1>
+                    <img th:src="@{/img/bulle.png}" alt="" id="fleche_bulle" />
+                    <p id="photo_zozor"><img th:src="@{/img/logo.png}" alt="Photo de Zozor" /></p>
+                    <p>Laisse-nous le temps de nous présenter&nbsp;: nous sommes la YoukArt Team, fondée le 21 mars 2019.</p>
+                    <p>Nous travaillons sur le projet "YoukArt", une plateforme sur laquelle tu pourras trouver des informations sur tes films, séries ou musiques préférés.</p>
+                    <p><img th:src="@{/img/facebook.png}" alt="Facebook" /><img th:src="@{/img/twitter.png}" alt="Twitter" /><img th:src="@{/img/vimeo.png}" alt="Vimeo" /><img th:src="@{/img/flickr.png}" alt="Flickr" /><img th:src="@{/img/rss.png}" alt="RSS" /></p>
+                </aside>
+            </section>
+            
+            <footer>
+                <div id="tweet">
+                    <h1>Notre dernier tweet</h1>
+                    <p>Salut tout le monde c'est TND !!!</p>
+                    <p>le 21 mars à 10h04</p>
+                </div>
+                <div id="mes_photos">
+                    <h1>Nouveautés</h1>
+                    <p><img th:src="@{/img/photo1.jpg}" alt="Photographie" /><img th:src="@{/img/photo2.jpg}"  alt="Photographie" /><img th:src="@{/img/photo3.jpg}"  alt="Photographie" /><img th:src="@{/img/photo4.jpg}" alt="Photographie" /></p>
+                </div>
+                <div id="mes_amis">
+                    <h1>La team</h1>
+                    <div id="listes_amis">
+                        <ul>
+                            <li><a href="https://www.facebook.com/tuannam.davaux">TND</a></li>
+                            <li><a href="https://www.facebook.com/louis.fontaine.902">Mr Orizan2</a></li>
+                            <li><a href="https://www.facebook.com/victor.vik0">Kwepy</a></li>
+                            <li><a href="https://www.facebook.com/julia.e.isha">Juju</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="https://www.facebook.com/B.smilly">Rania</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
