@@ -7,8 +7,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class SpotifyApiConnect {
-	
-	static String URL_ArtistID;
 
 
 	public String sendGetRequest(String requestUrl) {
@@ -40,27 +38,31 @@ public class SpotifyApiConnect {
 
 	}
 
-	public void APIArtistURL(String firstName, String lastName) {
+	public String getAPIArtistURL(String name) {
 		String URL = "https://api.spotify.com/v1/search?"
-					+firstName
-					+"%20"+lastName
-					+"&type=artist";
-		URL_ArtistID = sendGetRequest(URL); 
+				+name
+				+"&type=artist";
+		return sendGetRequest(URL); 
 	}
-	public String searchTopTracksArtistByID(String ID) {
-
+	public String searchTopTracksArtist(String name) {
+		
+		String URL_ArtistID = getAPIArtistURL(name);
 		return sendGetRequest(URL_ArtistID+"/top-tracks");
 
 	}
-	public String searchAlbumArtistByID(String ID) {
-
+	public String searchAlbumArtist(String name) {
+		
+		String URL_ArtistID = getAPIArtistURL(name);
 		return sendGetRequest(URL_ArtistID+"/albums");
 	}
-	public String searchAudioAnalysisByID(String ID) {
+	//public String searchAudioAnalysisByID(String ID) {
 
-		String requestUrl = URL_ArtistID.replaceAll("XX", "audio-analysis")
-		.replaceAll("ID", ID);
+		//return sendGetRequest(requestUrl);
+	//}
+	public static void main(String[] args) {
 
-		return sendGetRequest(requestUrl);
+		SpotifyApiConnect spotify = new SpotifyApiConnect();
+		String drake = spotify.searchAlbumArtist("drake");
+		System.out.println(drake);
 	}
 }
