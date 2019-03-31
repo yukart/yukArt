@@ -6,13 +6,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
 public class SpotifyApiConnect {
+	
+	static String URL_ArtistID;
 
-	private static final String SEARCH_URL = "https://api.spotify.com/v1/XX/ID" ;
 
 	public String sendGetRequest(String requestUrl) {
 
@@ -43,40 +40,27 @@ public class SpotifyApiConnect {
 
 	}
 
-	public String searchArtistByID(String ID) {
-
-		String requestUrl = SEARCH_URL.replaceAll("XX", "artists")
-		.replaceAll("ID", ID);
-
-		return sendGetRequest(requestUrl);
-
+	public void APIArtistURL(String firstName, String lastName) {
+		String URL = "https://api.spotify.com/v1/search?"
+					+firstName
+					+"%20"+lastName
+					+"&type=artist";
+		URL_ArtistID = sendGetRequest(URL); 
 	}
 	public String searchTopTracksArtistByID(String ID) {
 
-		String requestUrl = SEARCH_URL.replaceAll("XX", "artists")
-		.replaceAll("ID", ID);
-		return sendGetRequest(requestUrl+"/top-tracks");
+		return sendGetRequest(URL_ArtistID+"/top-tracks");
 
 	}
 	public String searchAlbumArtistByID(String ID) {
 
-		String requestUrl = SEARCH_URL.replaceAll("XX", "artists")
-		.replaceAll("ID", ID);
-
-		return sendGetRequest(requestUrl+"/albums");
+		return sendGetRequest(URL_ArtistID+"/albums");
 	}
 	public String searchAudioAnalysisByID(String ID) {
 
-		String requestUrl = SEARCH_URL.replaceAll("XX", "audio-analysis")
+		String requestUrl = URL_ArtistID.replaceAll("XX", "audio-analysis")
 		.replaceAll("ID", ID);
 
 		return sendGetRequest(requestUrl);
-	}
-
-	public JSONObject parseToJson(String request) throws ParseException {
-		JSONParser parser = new JSONParser();
-		JSONObject json = (JSONObject) parser.parse(request);
-
-		return json;
 	}
 }
